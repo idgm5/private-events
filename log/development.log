@@ -2552,3 +2552,210 @@ Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.1ms | Allocations: 526
 
 DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
  (called from block in execute at /home/isaac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /home/isaac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+Started GET "/" for ::1 at 2020-04-29 11:28:38 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (Duration: 256.9ms | Allocations: 128468)
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 2.1ms | Allocations: 132422)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `assist' for #<#<Class:0x0000560039415e30>:0x00005600394061d8>
+Did you mean?  assign):
+    19: 
+    20:         <td><%= link_to 'Show', event %></td>
+    21:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    22:         <td><%= link_to 'Assist', assist_event_path(assist), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+    23:     </tr>
+    24:     <% end %>
+    25:   </tbody>
+  
+app/views/events/index.html.erb:22
+app/views/events/index.html.erb:13
+Started GET "/" for ::1 at 2020-04-29 11:29:07 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 466ms (Views: 462.9ms | ActiveRecord: 0.3ms | Allocations: 24195)
+
+
+Started GET "/events/new" for ::1 at 2020-04-29 11:29:10 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:17:in `new'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 22.3ms | Allocations: 2592)
+  Rendered events/new.html.erb within layouts/application (Duration: 59.3ms | Allocations: 2923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 70.5ms | ActiveRecord: 2.3ms | Allocations: 15521)
+
+
+Started POST "/events" for ::1 at 2020-04-29 11:29:18 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"Wr25qbesOY8wbkQ8rQ41rCgnYcDpOucwNI1ZnHtwWEcqSnYL+eFxceCyxi9lxwQKqPPOE7KZuM9HP5henrOz3w==", "event"=>{"title"=>"More examples", "body"=>"Example"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30:in `block in create'
+  [1m[36mEvent Create (2.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "body", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "More examples"], ["body", "Example"], ["created_at", "2020-04-29 16:29:18.767769"], ["updated_at", "2020-04-29 16:29:18.767769"], ["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:30:in `block in create'
+  [1m[35m (107.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 126ms (ActiveRecord: 110.1ms | Allocations: 4630)
+
+
+Started GET "/events/2" for ::1 at 2020-04-29 11:29:18 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:80:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 203)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 4472)
+
+
+Started GET "/events" for ::1 at 2020-04-29 11:29:20 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 848)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 4351)
+
+
+Started PUT "/events/2/assist" for ::1 at 2020-04-29 11:29:23 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"fKVk1BtNuwvPiuD8dUT9/GI9wfPkSPWJNpiQonxRVKyFwLEDQlr1Ax6aBkBXwqht1V8u9CUHrBCzle6fBx8DUA==", "id"=>"2"}
+Completed 400 Bad Request in 11ms (ActiveRecord: 0.0ms | Allocations: 1192)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: guest):
+  
+app/controllers/events_controller.rb:89:in `guest_params'
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/events" for ::1 at 2020-04-29 11:36:28 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 4215)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.1ms | Allocations: 9301)
+
+
+Started PUT "/events/2/assist" for ::1 at 2020-04-29 11:36:31 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"QuYZeS17tUfFv69mfvpjLq/dEj2g8WNhw+EsJSyf+RK7g8yudGz7TxSvSdpcfDa/GL/9OmG+OvhG7FIYV9Gu7g==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.2ms | Allocations: 5351)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: guest):
+  
+app/controllers/events_controller.rb:91:in `guest_params'
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/events" for ::1 at 2020-04-29 11:37:45 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4552)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.6ms | Allocations: 9639)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 11:37:48 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"VZc3JINzMXB5VG03jK3RqrMjbC9KmH9Jbos5hjweyaqs8uLz2mR/eKhEi4uuK4Q7BEGDKIvXJtDrhke7R1CeVg==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.1ms | Allocations: 9086)
+
+
+  
+NoMethodError (undefined method `guests' for nil:NilClass):
+  
+app/controllers/events_controller.rb:66:in `assist'
+Started PUT "/events/2/assist" for ::1 at 2020-04-29 11:38:06 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"VZc3JINzMXB5VG03jK3RqrMjbC9KmH9Jbos5hjweyaqs8uLz2mR/eKhEi4uuK4Q7BEGDKIvXJtDrhke7R1CeVg==", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.2ms | Allocations: 1489)
+  Rendered events/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1551)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms | Allocations: 13126)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: event, local: true) do |form| %>
+    2: 
+    3:   <% if event.errors.any? %>
+    4:    <div id="error_explanation">
+    5:       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    6:         <ul>
+  
+app/views/events/_form.html.erb:3
+app/views/events/_form.html.erb:1
+app/views/events/new.html.erb:3
+app/controllers/events_controller.rb:71:in `block (2 levels) in assist'
+app/controllers/events_controller.rb:66:in `assist'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGuest Load (0.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGuest Create (0.8ms)[0m  [1m[32mINSERT INTO "guests" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 2], ["created_at", "2020-04-29 16:39:49.733382"], ["updated_at", "2020-04-29 16:39:49.733382"]]
+  [1m[35m (108.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGuest Load (0.3ms)[0m  [1m[34mSELECT "guests".* FROM "guests" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGuest Create (0.6ms)[0m  [1m[32mINSERT INTO "guests" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 1], ["created_at", "2020-04-29 16:40:49.806948"], ["updated_at", "2020-04-29 16:40:49.806948"]]
+  [1m[35m (102.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGuest Load (0.3ms)[0m  [1m[34mSELECT "guests".* FROM "guests" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "david"], ["created_at", "2020-04-29 16:41:36.816322"], ["updated_at", "2020-04-29 16:41:36.816322"]]
+  [1m[35m (101.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGuest Create (0.6ms)[0m  [1m[32mINSERT INTO "guests" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["event_id", 1], ["created_at", "2020-04-29 16:41:48.179743"], ["updated_at", "2020-04-29 16:41:48.179743"]]
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGuest Load (0.3ms)[0m  [1m[34mSELECT "guests".* FROM "guests" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "guests" ON "events"."id" = "guests"."event_id" WHERE "guests"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mGuest Load (0.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /home/isaac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /home/isaac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)

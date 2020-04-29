@@ -61,6 +61,19 @@ class EventsController < ApplicationController
     end
   end
 
+  def assist
+    @guest = User.find(session[:current_user_id]).guests.build
+    respond_to do |format|
+      if @guest.save
+        format.html { redirect_to @guest, notice: 'You are now assiting this event!' }
+        format.json { render :show, status: :created, location: @guest }
+      else
+        format.html { render :new }
+        format.json { render json: @guest.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -70,5 +83,9 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:title, :body)
+    end
+
+    def guest_params
+     params.require(:guest).permit(:user_id, :post_id)
     end
 end
