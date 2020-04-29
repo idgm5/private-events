@@ -62,8 +62,7 @@ class EventsController < ApplicationController
   end
 
   def assist
-    @event = Event.find(params[:id])
-    @guest = @event.guests.build
+    @guest = Guest.create(:user_id => User.find(session[:current_user_id]), :event_id => Event.find(params[:id]))
 
     respond_to do |format|
       if @guest.save
@@ -85,9 +84,5 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:title, :body)
-    end
-
-    def guest_params
-      params.require(:guest).permit(:user_id, :post_id)
     end
 end
