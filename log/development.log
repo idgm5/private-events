@@ -2933,3 +2933,163 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms | Allocations: 5519)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "guests" ON "events"."id" = "guests"."event_id" WHERE "guests"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-04-29 12:24:26 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1381)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1708)
+
+
+  
+ActionView::Template::Error (undefined method `>' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Events</h1>
+    4: <% if session[:current_user_id] > 0 %>
+    5:   <h3>Current User ID: <%= session[:current_user_id] %></h3>
+    6: <% else %>
+    7:   <%= link_to 'Create a new user', new_user_path  %>
+  
+app/views/events/index.html.erb:4
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 12:24:52 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"kgQwtdlW0no+sg4fcQl7B+iXt34cIV/K1F80QPLyLdVrYeVigEGccu+i6KNTjy6WX/VYed1uBlNRUkp9ibx6KQ==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.7ms | Allocations: 1790)
+  Rendered events/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2095)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms | Allocations: 10204)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: event, local: true) do |form| %>
+    2: 
+    3:   <% if event.errors.any? %>
+    4:    <div id="error_explanation">
+    5:       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    6:         <ul>
+  
+app/views/events/_form.html.erb:3
+app/views/events/_form.html.erb:1
+app/views/events/new.html.erb:3
+app/controllers/events_controller.rb:71:in `block (2 levels) in assist'
+app/controllers/events_controller.rb:66:in `assist'
+Started GET "/events" for ::1 at 2020-04-29 12:35:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2100)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 4745)
+
+
+  
+ActionView::Template::Error (undefined method `exist?' for 1:Integer):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Events</h1>
+    4: <% if session[:current_user_id].exist? %>
+    5:   <h3>Current User ID: <%= session[:current_user_id] %></h3>
+    6: <% else %>
+    7:   <%= link_to 'Create a new user', new_user_path  %>
+  
+app/views/events/index.html.erb:4
+Started GET "/events" for ::1 at 2020-04-29 12:36:34 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2135)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3321)
+
+
+  
+ActionView::Template::Error (undefined method `exists?' for 1:Integer):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Events</h1>
+    4: <% if session[:current_user_id].exists? %>
+    5:   <h3>Current User ID: <%= session[:current_user_id] %></h3>
+    6: <% else %>
+    7:   <%= link_to 'Create a new user', new_user_path  %>
+  
+app/views/events/index.html.erb:4
+Started GET "/events" for ::1 at 2020-04-29 12:37:44 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 242.4ms | Allocations: 129682)
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.2ms | Allocations: 130869)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guest' for #<#<Class:0x00007f2d914d8e90>:0x00007f2d914d3148>):
+    23: 
+    24:         <td><%= link_to 'Show', event %></td>
+    25:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    26:         <td><%= link_to 'Assist', assist_event_path(guest), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+    27:     </tr>
+    28:     <% end %>
+    29:   </tbody>
+  
+app/views/events/index.html.erb:26
+app/views/events/index.html.erb:17
+Started GET "/events" for ::1 at 2020-04-29 12:38:01 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1172)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 5541)
+
+
+Started GET "/" for ::1 at 2020-04-29 12:38:06 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 871)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 4216)
+
+
+Started GET "/users/new" for ::1 at 2020-04-29 12:38:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 794)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 7992)
+
+
+Started POST "/users" for ::1 at 2020-04-29 12:38:34 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"0U7SvKsMYQWVWqlCy6bdO/gfSa5l9se7n529yL6pOVMAJlQZDH7GXNcXPRD1T6d15WI4MzTSu3Wr+Tv6yef43A==", "user"=>{"name"=>"Rodolfo"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rodolfo"], ["created_at", "2020-04-29 17:38:34.935567"], ["updated_at", "2020-04-29 17:38:34.935567"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (119.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 130ms (ActiveRecord: 119.4ms | Allocations: 3657)
+
+
+Started GET "/" for ::1 at 2020-04-29 12:38:35 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 853)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 4306)
+
+

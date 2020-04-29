@@ -62,7 +62,8 @@ class EventsController < ApplicationController
   end
 
   def assist
-    @guest = User.find(session[:current_user_id]).guests.build
+    @guest = User.find(session[:current_user_id]).guests.build(guest_params)
+    @guest = @event.guests.build(guest_params)
     respond_to do |format|
       if @guest.save
         format.html { redirect_to @guest, notice: 'You are now assiting this event!' }

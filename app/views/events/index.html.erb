@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
-<% if session[:current_user_id] > 0 %>
+<% if session[:current_user_id].is_a? Integer %>
   <h3>Current User ID: <%= session[:current_user_id] %></h3>
 <% else %>
   <%= link_to 'Create a new user', new_user_path  %>
