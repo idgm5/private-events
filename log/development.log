@@ -3093,3 +3093,576 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 4306)
 
 
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 12:39:33 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"ryNqw3vWGOU6pVZ1zCPgA1gTy7bcMsGKvnnxSu5SmZGadQi0qmiIfUd9mODHIyj6fK39Y6qLakt0c73Gmhjs0Q==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.2ms | Allocations: 3996)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: guest):
+  
+app/controllers/events_controller.rb:90:in `guest_params'
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/" for ::1 at 2020-04-29 12:43:16 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1162)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms | Allocations: 5528)
+
+
+Started PUT "/events/event/assist" for ::1 at 2020-04-29 12:43:19 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"pRNlzGJTGwWtG44mSGIrzxT9v8jhQ/ZOGEpxz4PiL3iQRQe7s+2LndDDQLNDYuM2MEOJHZf6XY/SQD1D96haOA==", "id"=>"event"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms | Allocations: 1127)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: guest):
+  
+app/controllers/events_controller.rb:90:in `guest_params'
+app/controllers/events_controller.rb:65:in `assist'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGuest Load (26.2ms)[0m  [1m[34mSELECT "guests".* FROM "guests" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/events" for ::1 at 2020-04-29 14:23:20 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 6336)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.9ms | Allocations: 10292)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"assist", :controller=>"events"}, missing required keys: [:id]):
+    23: 
+    24:         <td><%= link_to 'Show', event %></td>
+    25:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    26:         <td><%= link_to 'Assist', assist_event_path, method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+    27:     </tr>
+    28:     <% end %>
+    29:   </tbody>
+  
+app/views/events/index.html.erb:26
+app/views/events/index.html.erb:17
+Started GET "/events" for ::1 at 2020-04-29 14:24:34 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1948)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 3164)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"assist", :controller=>"events", :id=>nil}, missing required keys: [:id]):
+    23: 
+    24:         <td><%= link_to 'Show', event %></td>
+    25:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    26:         <td><%= link_to 'Assist', assist_event_path(@guest), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+    27:     </tr>
+    28:     <% end %>
+    29:   </tbody>
+  
+app/views/events/index.html.erb:26
+app/views/events/index.html.erb:17
+Started GET "/events" for ::1 at 2020-04-29 14:24:44 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1176)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 435ms (Views: 434.0ms | ActiveRecord: 0.1ms | Allocations: 9011)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:24:52 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"agiJxllc/orLrLtOq8U6chx0/m/ZFasj/uRVFQtb2zmTbVwRAEuwghq8XfKJQ2/jqxYRaBha8rp76SsocBWMxQ==", "id"=>"1"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1746)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/events" for ::1 at 2020-04-29 14:25:49 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 4606)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.7ms | Allocations: 9659)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:25:54 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"i1Td5AjlRSdl63iTNT+QjL83hz1/yL/QYbmUivpTTRlyMQgzUfILL7T7ni8XucUdCFVoOr6H5knktOq3gR0a5Q==", "id"=>"1"}
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms | Allocations: 43657)
+
+
+  
+NoMethodError (undefined method `id' for #<EventsController:0x0000557042c338d8>):
+  
+app/controllers/events_controller.rb:65:in `assist'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:27:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"i1Td5AjlRSdl63iTNT+QjL83hz1/yL/QYbmUivpTTRlyMQgzUfILL7T7ni8XucUdCFVoOr6H5knktOq3gR0a5Q==", "id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1284)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/" for ::1 at 2020-04-29 14:31:23 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 4593)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 0.8ms | Allocations: 9526)
+
+
+Started GET "/users/new" for ::1 at 2020-04-29 14:31:25 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 60.1ms | Allocations: 2283)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 110ms (Views: 64.6ms | ActiveRecord: 0.4ms | Allocations: 9933)
+
+
+Started POST "/users" for ::1 at 2020-04-29 14:31:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"tT0eSH7do7BdQ2z8k/w5NAxAEjlW6hhu61OfXbabTJarI3/sIt2AFwhDVoaZgOGoR4OdZqQLO9BDBoEJ0L7qng==", "user"=>{"name"=>"Perez"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (24.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Perez"], ["created_at", "2020-04-29 19:31:30.972711"], ["updated_at", "2020-04-29 19:31:30.972711"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (84.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 113ms (ActiveRecord: 108.4ms | Allocations: 3736)
+
+
+Started GET "/" for ::1 at 2020-04-29 14:31:31 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 853)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 4451)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:31:36 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"We3CukiJ6rBIcUHSxGaOZTsTLxa8lGds1FzMmBktZPB2HJ2TqYeq07/afLGD5PtH+ccUIapZqWgAVDCG6mc+pA==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.1ms | Allocations: 1993)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/" for ::1 at 2020-04-29 14:33:16 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4559)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.7ms | Allocations: 9590)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:33:20 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"KcIPqGFUKLG0CEjugDwLWJ0FhDUr6hI1V9l1/t1xrqIGM1CBgFpo0kOjdY3Hvn56X9G/Aj0n3DGD0YngLjv09g==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms | Allocations: 5194)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/" for ::1 at 2020-04-29 14:35:30 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4567)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.6ms | Allocations: 9594)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:35:34 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"+B4S9S97OHd4edo8qmbyHKtYohNwQCS8sudD+2s+06PX703cznV4FI/S51/t5Ic+aYyZJGaN6rhm77/lmHSJ9w==", "id"=>"1"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 1129)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/events_controller.rb:89:in `guest_params'
+app/controllers/events_controller.rb:65:in `assist'
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:36:15 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"+B4S9S97OHd4edo8qmbyHKtYohNwQCS8sudD+2s+06PX703cznV4FI/S51/t5Ic+aYyZJGaN6rhm77/lmHSJ9w==", "id"=>"1"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 1285)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: guest):
+  
+app/controllers/events_controller.rb:89:in `guest_params'
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/" for ::1 at 2020-04-29 14:36:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 4560)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 9619)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:36:47 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"GmsfZjOPeYh1F9/lUg5bDmrYe1PMTfnyI4E2QKACdio1mkBP0oE564K84oYVjC4sqAxAZNqAN/b3icpeU0gsfg==", "id"=>"1"}
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 12.5ms | Allocations: 1802)
+  Rendered events/new.html.erb within layouts/application (Duration: 19.3ms | Allocations: 2112)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.6ms | Allocations: 12668)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: event, local: true) do |form| %>
+    2: 
+    3:   <% if event.errors.any? %>
+    4:    <div id="error_explanation">
+    5:       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    6:         <ul>
+  
+app/views/events/_form.html.erb:3
+app/views/events/_form.html.erb:1
+app/views/events/new.html.erb:3
+app/controllers/events_controller.rb:71:in `block (2 levels) in assist'
+app/controllers/events_controller.rb:66:in `assist'
+Started GET "/" for ::1 at 2020-04-29 14:43:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 5702)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms | Allocations: 8355)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    23: 
+    24:         <td><%= link_to 'Show', event %></td>
+    25:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    26:         <td><%= link_to 'Assist', assist_event_path(:event => @event.id), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+    27:     </tr>
+    28:     <% end %>
+    29:   </tbody>
+  
+app/views/events/index.html.erb:26
+app/views/events/index.html.erb:17
+Started GET "/" for ::1 at 2020-04-29 14:44:03 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1927)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 3121)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"assist", :controller=>"events", :event=>1}, missing required keys: [:id]):
+    22:       <tr>
+    23:         <td><%= link_to 'Show', event %></td>
+    24:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    25:         <td><%= link_to 'Assist', assist_event_path(:event => event.id), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+    26:     </tr>
+    27:     <% end %>
+    28:   </tbody>
+  
+app/views/events/index.html.erb:25
+app/views/events/index.html.erb:17
+Started GET "/" for ::1 at 2020-04-29 14:44:18 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2014)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 3208)
+
+
+  
+ActionView::Template::Error (No route matches {#<Event id: 1, title: "Testing", body: "example", created_at: "2020-04-28 22:32:13", updated_at: "2020-04-28 22:32:13", user_type: nil, user_id: 1>=>1, :action=>"assist", :controller=>"events"}, missing required keys: [:id]):
+    22:       <tr>
+    23:         <td><%= link_to 'Show', event %></td>
+    24:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    25:         <td><%= link_to 'Assist', assist_event_path(event => event.id), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+    26:     </tr>
+    27:     <% end %>
+    28:   </tbody>
+  
+app/views/events/index.html.erb:25
+app/views/events/index.html.erb:17
+Started GET "/" for ::1 at 2020-04-29 14:44:46 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2006)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 3206)
+
+
+  
+ActionView::Template::Error (No route matches {#<Event id: 1, title: "Testing", body: "example", created_at: "2020-04-28 22:32:13", updated_at: "2020-04-28 22:32:13", user_type: nil, user_id: 1>=>1, :action=>"assist", :controller=>"events"}, missing required keys: [:id]):
+    22:       <tr>
+    23:         <td><%= link_to 'Show', event %></td>
+    24:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    25:         <td><%= link_to 'Assist', assist_event_path(event => event.id), data: { confirm: 'Do you want to assist to this event?' } %></td>
+    26:     </tr>
+    27:     <% end %>
+    28:   </tbody>
+  
+app/views/events/index.html.erb:25
+app/views/events/index.html.erb:17
+Started GET "/events" for ::1 at 2020-04-29 14:45:52 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2384)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 3564)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    22:       <tr>
+    23:         <td><%= link_to 'Show', event %></td>
+    24:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    25:         <td><%= link_to 'Assist', assist_event_path(:event => @event.id) %></td>
+    26:     </tr>
+    27:     <% end %>
+    28:   </tbody>
+  
+app/views/events/index.html.erb:25
+app/views/events/index.html.erb:17
+Started GET "/events" for ::1 at 2020-04-29 14:46:05 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1924)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 3104)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"assist", :controller=>"events", :event=>1}, missing required keys: [:id]):
+    22:       <tr>
+    23:         <td><%= link_to 'Show', event %></td>
+    24:         <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    25:         <td><%= link_to 'Assist', assist_event_path(:event => event.id) %></td>
+    26:     </tr>
+    27:     <% end %>
+    28:   </tbody>
+  
+app/views/events/index.html.erb:25
+app/views/events/index.html.erb:17
+Started GET "/events" for ::1 at 2020-04-29 14:47:41 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1168)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.2ms | Allocations: 5538)
+
+
+Started GET "/" for ::1 at 2020-04-29 14:47:52 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 859)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 4316)
+
+
+Started GET "/events/4/assist.1" for ::1 at 2020-04-29 14:47:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/4/assist.1"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-04-29 14:48:48 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1215)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.3ms | Allocations: 5591)
+
+
+Started PUT "/events/4/assist.1" for ::1 at 2020-04-29 14:48:51 -0500
+Processing by EventsController#assist as 
+  Parameters: {"authenticity_token"=>"CqWyJIBg7oafAJnXAt+p/RHb8EiHat8Hdjrki4YRcJMlVO0NYW6u5WirpLRFXdzf0w/Lf5GnEQOiMhiVdVsqxw==", "id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms | Allocations: 1208)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=4):
+  
+app/controllers/events_controller.rb:65:in `assist'
+Started GET "/" for ::1 at 2020-04-29 14:50:08 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1161)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.3ms | Allocations: 5538)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:50:11 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"bX9uV4y3Pcr4BrJKmqwSd0sGIfVin9Ip0REIgsFEQhBCjjF+bbl9qQ+tjyndLmdVidIawnRSHC0FGfScMg4YRA==", "id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 6.1ms | Allocations: 1193)
+  Rendered events/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1521)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 15.4ms | ActiveRecord: 0.1ms | Allocations: 14695)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:50:17 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"bX9uV4y3Pcr4BrJKmqwSd0sGIfVin9Ip0REIgsFEQhBCjjF+bbl9qQ+tjyndLmdVidIawnRSHC0FGfScMg4YRA==", "id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.5ms | Allocations: 717)
+  Rendered events/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 798)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 5589)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGuest Load (0.2ms)[0m  [1m[34mSELECT "guests".* FROM "guests" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-04-29 14:52:22 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4527)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 1.0ms | Allocations: 9536)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:52:25 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"SuwyW0cwXIv5UdgMYpiV6XvbE9odOIsKluurhwzNJ3tlHW1ypj4c6A765W8lGuDLuQ8o7Qv1RQ5C41eZ/4d9Lw==", "id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.3ms | Allocations: 721)
+  Rendered events/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 803)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 11443)
+
+
+Started GET "/" for ::1 at 2020-04-29 14:54:33 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 4527)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.6ms | Allocations: 9543)
+
+
+Started PUT "/events/1/assist" for ::1 at 2020-04-29 14:54:37 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"X/991DEhlSHmhGpbXKfVRUCW06Hv3tEvfxhKbzDpiARwDiL90C/VQhEvVzgbJaBngkLolvkTHyurELZxw6PSUA==", "id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:65:in `assist'
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 1.0ms | Allocations: 7562)
+
+
+Started GET "/" for ::1 at 2020-04-29 14:54:37 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 844)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 4315)
+
+

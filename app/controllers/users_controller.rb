@@ -5,10 +5,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    # @user = User.new(username: params[:username], email: params[:email], password: params[:password])
     @user = User.new(user_params)
     if @user.save
-      session[:current_user_id] = @user.id  
+      session[:current_user_id] = @user.id
       redirect_to root_path
     end
   end

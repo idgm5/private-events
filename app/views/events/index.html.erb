@@ -20,10 +20,9 @@
       <td><%= event.body  %></td>
       </tr>
       <tr>
-
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Assist', assist_event_path(event), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+        <td><%= link_to 'Assist', assist_event_path(event.id), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
     </tr>
     <% end %>
   </tbody>

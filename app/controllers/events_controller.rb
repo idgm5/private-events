@@ -62,14 +62,15 @@ class EventsController < ApplicationController
   end
 
   def assist
-    @guest = User.find(session[:current_user_id]).guests.build(guest_params)
-    @guest = @event.guests.build(guest_params)
+    @event = Event.find(params[:id])
+    @guest = @event.guests.build
+
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to @guest, notice: 'You are now assiting this event!' }
-        format.json { render :show, status: :created, location: @guest }
+        format.html { redirect_to root_path, notice: 'You are now assiting this event!' }
+        format.json { head :no_content}
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: "An error happened you can't assist this event" }
         format.json { render json: @guest.errors, status: :unprocessable_entity }
       end
     end
@@ -87,6 +88,6 @@ class EventsController < ApplicationController
     end
 
     def guest_params
-     params.require(:guest).permit(:user_id, :post_id)
+      params.require(:guest).permit(:user_id, :post_id)
     end
 end
