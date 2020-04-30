@@ -10,6 +10,8 @@ class EventsController < ApplicationController
     else
       @user = User.first
     end
+    @upcoming_events = @events.where('start_date > ?', Date.today).all
+    @prev_events = @events.where('start_date < ?', Date.today).all
   end
 
   # GET /Events/1
