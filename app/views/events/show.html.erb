@@ -4,6 +4,8 @@
   <strong>Host: <%= @event.user.name %></strong>
 </p>
 
+<%= simple_format(@event.body)  %>
+
 <p>
   <strong>List of attendees:</strong>
   <br/>
