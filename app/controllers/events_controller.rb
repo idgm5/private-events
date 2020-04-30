@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   # GET /Events/1
   # GET /Events/1.json
   def show
-    @guests = Guest.all
+    @guests = @event.assistances
   end
 
   # GET /Events/new
@@ -68,7 +68,7 @@ class EventsController < ApplicationController
   end
 
   def assist
-    @guest = Guest.new(event_params)
+    @guest = Guest.new(guest_params)
 
     respond_to do |format|
       if @guest.save
@@ -89,6 +89,10 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.permit(:title, :body, :user_id, :event_id)
+      params.require(:event).permit(:title, :body)
+    end
+
+    def guest_params
+      params.permit(:user_id, :event_id)
     end
 end

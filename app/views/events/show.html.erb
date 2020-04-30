@@ -10,8 +10,8 @@
   <tbody>
     <% @guests.each do |guest| %>
       <tr>
-        <% if @event.user.name != guest.user.name %>
-        <td><strong><%= guest.user.name %></strong></td>
+        <% if @event.user.name != guest.name %>
+        <td><strong><%= guest.name %></strong></td>
         <br/>
         <% end %>
       </tr>
