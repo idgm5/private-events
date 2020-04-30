@@ -5219,3 +5219,888 @@ Processing by EventsController#show as HTML
 Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.6ms | Allocations: 6904)
 
 
+Started GET "/events" for ::1 at 2020-04-30 16:52:42 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1272)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 5340)
+
+
+Started GET "/events" for ::1 at 2020-04-30 16:54:25 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1198)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2854)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+<% if session[:current_user_id].is_a? Integer %>
+  <h3>Current User ID: <%= session[:current_user_id] %></h3>
+<% else %>
+  <%= link_to 'Create a new user', new_user_path  %>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+    <tr>
+      <td><%= event.title  %></td>
+      </tr>
+      <tr>
+        	<%= link_to 'Delete', event, method: :delete, data: { confirm: "Are you sure you want to delete this tweet?" } do %>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Assist', assist_path(event_id: event, user_id: session[:current_user_id]), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New event', new_event_path %>
+
+):
+1:    <p id="notice"><%= notice %></p>
+2:    
+3:    <h1>Events</h1>
+4:    <% if session[:current_user_id].is_a? Integer %>
+5:      <h3>Current User ID: <%= session[:current_user_id] %></h3>
+6:    <% else %>
+7:      <%= link_to 'Create a new user', new_user_path  %>
+8:    <% end %>
+9:    <table>
+10:      <thead>
+11:        <tr>
+12:          <th colspan="3"></th>
+13:        </tr>
+14:      </thead>
+15:    
+16:      <tbody>
+17:        <% @events.each do |event| %>
+18:        <tr>
+19:          <td><%= event.title  %></td>
+20:          </tr>
+21:          <tr>
+22:            	<%= link_to 'Delete', event, method: :delete, data: { confirm: "Are you sure you want to delete this tweet?" } do %>
+23:            <td><%= link_to 'Show', event %></td>
+24:            <td><%= link_to 'Assist', assist_path(event_id: event, user_id: session[:current_user_id]), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
+25:            </tr>
+26:        <% end %>
+27:      </tbody>
+28:    </table>
+29:    
+30:    <br>
+31:    
+32:    <%= link_to 'New event', new_event_path %>
+  
+app/views/events/index.html.erb:35: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:35: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:35: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:35: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:35: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:35: syntax error, unexpected end-of-input, expecting `end'
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /home/isaac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+Started GET "/events" for ::1 at 2020-04-30 17:00:32 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1456)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.5ms | Allocations: 6320)
+
+
+Started DELETE "/events/1" for ::1 at 2020-04-30 17:00:36 -0500
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0hiKSGEjIbnJd8FZ55cTbDZyBHRm/t2PiKD+++13rIQrfV+fODRvsRhnJ+XFEUb9gRDrc6exhBYNrYDGljn7eA==", "id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 4262)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/events_controller.rb:63:in `destroy'
+Started GET "/events/1" for ::1 at 2020-04-30 17:01:51 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1986)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 6114)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:01:52 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1129)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 5048)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:01:53 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1681)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 5666)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:01:54 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 5047)
+
+
+Started DELETE "/events/2" for ::1 at 2020-04-30 17:01:56 -0500
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WSIAAHN7W1ZNE0DTX9gFZWFHRZEzceH51XoGS5SOXeCgR9XXKmwVXpwDpm99XlD01iWqlvI+uGBQd3h278AKHA==", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms | Allocations: 3593)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/events_controller.rb:63:in `destroy'
+Started GET "/events" for ::1 at 2020-04-30 17:02:10 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 5056)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mEvent Destroy (1.6ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Destroy (1.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mEvent Destroy (1.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+Started GET "/events/3" for ::1 at 2020-04-30 17:05:09 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1737)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 5710)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:05:15 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 5045)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:05:16 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 5049)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/events" for ::1 at 2020-04-30 17:06:35 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5047)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  [1m[35m (89.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_type" varchar, "user_id" integer)[0m
+  [1m[35m (79.1ms)[0m  [1m[35mCREATE  INDEX "index_events_on_user_type_and_user_id" ON "events" ("user_type", "user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "guests"[0m
+  [1m[35m (99.3ms)[0m  [1m[35mCREATE TABLE "guests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (81.6ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_event_id" ON "guests" ("event_id")[0m
+  [1m[35m (409.5ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_user_id" ON "guests" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (87.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aguests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_user_id" ON "aguests" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_event_id" ON "aguests" ("event_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aguests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "guests"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "guests"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "guests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_64ecc46b69"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_event_id" ON "guests" ("event_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_user_id" ON "guests" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "guests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "aguests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aguests"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (64.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aguests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_user_id" ON "aguests" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_event_id" ON "aguests" ("event_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aguests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "guests"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "guests"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "guests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_64ecc46b69"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+, CONSTRAINT "fk_rails_9b121eeada"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_event_id" ON "guests" ("event_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_user_id" ON "guests" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "guests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "aguests"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aguests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (68.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (81.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (62.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200428222409)[0m
+  [1m[35m (73.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200428195608),
+(20200428195701),
+(20200428195828);
+
+[0m
+  [1m[35m (109.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-30 22:07:00.441253"], ["updated_at", "2020-04-30 22:07:00.441253"]]
+  [1m[35m (73.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3e96c1fcaad37376a40c7bfed69f7e7c85821130"], ["created_at", "2020-04-30 22:07:00.530727"], ["updated_at", "2020-04-30 22:07:00.530727"]]
+  [1m[35m (79.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  [1m[35m (108.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_type" varchar, "user_id" integer)[0m
+  [1m[35m (103.1ms)[0m  [1m[35mCREATE  INDEX "index_events_on_user_type_and_user_id" ON "events" ("user_type", "user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "guests"[0m
+  [1m[35m (107.9ms)[0m  [1m[35mCREATE TABLE "guests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (104.9ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_event_id" ON "guests" ("event_id")[0m
+  [1m[35m (116.0ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_user_id" ON "guests" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (432.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aguests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_user_id" ON "aguests" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_event_id" ON "aguests" ("event_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aguests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "guests"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "guests"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "guests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_64ecc46b69"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_event_id" ON "guests" ("event_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_user_id" ON "guests" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "guests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "aguests"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aguests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (74.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aguests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_user_id" ON "aguests" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aguests_on_event_id" ON "aguests" ("event_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aguests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "guests"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "guests"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "guests" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "event_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_64ecc46b69"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+, CONSTRAINT "fk_rails_9b121eeada"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_event_id" ON "guests" ("event_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_guests_on_user_id" ON "guests" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "guests" ("id","user_id","event_id","created_at","updated_at")
+                     SELECT "id","user_id","event_id","created_at","updated_at" FROM "aguests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aguests"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (81.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (111.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (128.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200428222409)[0m
+  [1m[35m (86.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200428195608),
+(20200428195701),
+(20200428195828);
+
+[0m
+  [1m[35m (127.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-30 22:07:02.352626"], ["updated_at", "2020-04-30 22:07:02.352626"]]
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-04-30 22:07:02.453072"], ["key", "environment"]]
+  [1m[35m (87.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3e96c1fcaad37376a40c7bfed69f7e7c85821130"], ["created_at", "2020-04-30 22:07:02.555828"], ["updated_at", "2020-04-30 22:07:02.555828"]]
+  [1m[35m (332.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events" for ::1 at 2020-04-30 17:07:11 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+Completed 404 Not Found in 12ms (ActiveRecord: 0.5ms | Allocations: 5847)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=8):
+  
+app/controllers/events_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-04-30 17:07:24 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1113)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=8):
+  
+app/controllers/events_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-04-30 17:07:46 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1060)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/events_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2020-04-30 17:08:37 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:11:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1357)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 20.3ms | ActiveRecord: 1.2ms | Allocations: 9162)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 17:08:41 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2301)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 8137)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 17:08:46 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"UbGfdWO20StpgisVluGTHzTMcY8qSA6L1uwn3ayImQstfMPxAr0S3hz4rGzIQ8bXJSVpkoqNRBkv+AvoGxfMPA==", "user"=>{"name"=>"Isaac Gonzalez"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Isaac Gonzalez"], ["created_at", "2020-04-30 22:08:46.614795"], ["updated_at", "2020-04-30 22:08:46.614795"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (354.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 364ms (ActiveRecord: 356.0ms | Allocations: 3828)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-30 17:08:46 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 611)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 4548)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:08:52 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 605)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 4538)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-30 17:09:08 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:11:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 4576)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 17:09:09 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 509)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 3943)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 17:10:08 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"jt3xv4DoDn7YSpKCBZNxSJzm6ZpPVb5JOhEMnEr7e0IBnvHRjCR/PccMZbPaVGAYU+OeIbfXPXgnPKm+xkjX1Q==", "user"=>{"name"=>"Akira Matsuda"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Akira Matsuda"], ["created_at", "2020-04-30 22:10:08.922536"], ["updated_at", "2020-04-30 22:10:08.922536"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 84ms (ActiveRecord: 77.2ms | Allocations: 3441)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-30 17:10:09 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 629)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 4678)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-04-30 17:10:11 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:23:in `new'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 2.0ms | Allocations: 1207)
+  Rendered events/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1538)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 6.7ms | ActiveRecord: 0.6ms | Allocations: 13161)
+
+
+Started POST "/events" for 127.0.0.1 at 2020-04-30 17:11:13 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"AcYTwRQDmPKGChbG1gr7qKpPGFlmlrbrqHpdS0W5mb8ZeJX5NGQ1kMKsVaglRqO7syqbREoGG4jt2QAFTxHAfA==", "event"=>{"title"=>"Akira Matsuda", "body"=>"RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\nHuge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\nThe most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\nThe opportunity to understand what Japanese Rubyists are saying in their presentations! \r\n\r\nThere will be JA -> EN interpreters available during RubyKaigi! \r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:33:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:36:in `block in create'
+  [1m[36mEvent Create (1.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "body", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Akira Matsuda"], ["body", "RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\nHuge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\nThe most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\nThe opportunity to understand what Japanese Rubyists are saying in their presentations! \r\n\r\nThere will be JA -> EN interpreters available during RubyKaigi! \r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"], ["created_at", "2020-04-30 22:11:13.987300"], ["updated_at", "2020-04-30 22:11:13.987300"], ["user_id", 2]]
+  ↳ app/controllers/events_controller.rb:36:in `block in create'
+  [1m[35m (69.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:36:in `block in create'
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 88ms (ActiveRecord: 71.9ms | Allocations: 4362)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2020-04-30 17:11:14 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4272)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 11.9ms | ActiveRecord: 1.0ms | Allocations: 11799)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:11:18 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.5ms | Allocations: 4723)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2020-04-30 17:11:23 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1712)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.7ms | Allocations: 5693)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2020-04-30 17:11:30 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.4ms | Allocations: 753)
+  Rendered events/edit.html.erb within layouts/application (Duration: 7.0ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 5064)
+
+
+Started PATCH "/events/1" for 127.0.0.1 at 2020-04-30 17:11:39 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"mfsZBvOJuSpESy6Z4c9hjYNLLS2wjSyo0uq/WY3c+hT3JSZ4z3TjaA7U8w168l8Lr3h1gMgZEufnqOhjLBeuHA==", "event"=>{"title"=>"RubyKaigi 2020", "body"=>"RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\nHuge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\nThe most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\nThe opportunity to understand what Japanese Rubyists are saying in their presentations! \r\n\r\nThere will be JA -> EN interpreters available during RubyKaigi! \r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mEvent Update (0.3ms)[0m  [1m[33mUPDATE "events" SET "title" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["title", "RubyKaigi 2020"], ["updated_at", "2020-04-30 22:11:39.723751"], ["id", 1]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[35m (74.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 87ms (ActiveRecord: 74.8ms | Allocations: 5357)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2020-04-30 17:11:39 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1863)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.5ms | Allocations: 5871)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:11:42 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 779)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 4709)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2020-04-30 17:11:47 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1710)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.7ms | Allocations: 5689)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:11:55 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.5ms | Allocations: 4703)
+
+
+Started DELETE "/events/1" for 127.0.0.1 at 2020-04-30 17:11:57 -0500
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VieKIFq5NvMt1SM49+mn+UIvzCcT5bdeeRpUO/IUXOW++50QXY1xEDRf2Gia+LbV0n/vnXCy9F7G5e4RwoIO1A==", "id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+  [1m[36mEvent Destroy (1.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+  [1m[35m (98.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:63:in `destroy'
+Redirected to http://localhost:3000/events
+Completed 302 Found in 111ms (ActiveRecord: 100.2ms | Allocations: 3636)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:11:57 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 605)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 4542)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-04-30 17:12:00 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:23:in `new'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 2.3ms | Allocations: 679)
+  Rendered events/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 4844)
+
+
+Started POST "/events" for 127.0.0.1 at 2020-04-30 17:12:09 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"TzfB52QT6Z1E9I5qSPCawCEHiOntFshy5RV9RNGVepJXiUffRHRE/wBSzQS7vMLTOGIL9MGGZRGgtiAK2z0jUQ==", "event"=>{"title"=>"RubyKaigi 2020", "body"=>"RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\nHuge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\nThe most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\nThe opportunity to understand what Japanese Rubyists are saying in their presentations!\r\n\r\nThere will be JA -> EN interpreters available during RubyKaigi!\r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:33:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:36:in `block in create'
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("title", "body", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "RubyKaigi 2020"], ["body", "RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\nHuge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\nThe most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\nThe opportunity to understand what Japanese Rubyists are saying in their presentations!\r\n\r\nThere will be JA -> EN interpreters available during RubyKaigi!\r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"], ["created_at", "2020-04-30 22:12:09.746826"], ["updated_at", "2020-04-30 22:12:09.746826"], ["user_id", 2]]
+  ↳ app/controllers/events_controller.rb:36:in `block in create'
+  [1m[35m (70.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:36:in `block in create'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 86ms (ActiveRecord: 71.8ms | Allocations: 4174)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:12:09 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1712)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 5716)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:12:14 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 4706)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:14:10 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 5946)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:14:20 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1971)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 6114)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:14:22 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 4702)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:15:10 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1098)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 5947)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:15:15 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1972)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 0.4ms | Allocations: 6089)
+
+

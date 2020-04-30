@@ -2,9 +2,10 @@
 
 <h1>Events</h1>
 <% if session[:current_user_id].is_a? Integer %>
-  <h3>Current User ID: <%= session[:current_user_id] %></h3>
+  <h3>Current User ID:
+    <%= session[:current_user_id] %></h3>
 <% else %>
-  <%= link_to 'Create a new user', new_user_path  %>
+  <%= link_to 'Create a new user', new_user_path %>
 <% end %>
 <table>
   <thead>
@@ -15,13 +16,17 @@
 
   <tbody>
     <% @events.each do |event| %>
-    <tr>
-      <td><%= event.title  %></td>
-      </tr>
       <tr>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Assist', assist_path(event_id: event, user_id: session[:current_user_id]), method: :put, data: { confirm: 'Do you want to assist to this event?' } %></td>
-        </tr>
+        <td>
+          <%= event.title %>
+          |
+          <%= link_to 'Show', event %>
+          |
+          <%= link_to 'Assist', assist_path(event_id: event, user_id: session[:current_user_id]), method: :put, data: { confirm: 'Do you want to assist to this event?' } %>
+          |
+          <%= link_to 'Delete', event_path(event), data: {confirm: "Really delete the article?"}, method: :delete %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
