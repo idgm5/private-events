@@ -5,11 +5,17 @@ class EventsController < ApplicationController
   # GET /Events.json
   def index
     @events = Event.all
+    if session[:current_user_id].is_a? Integer
+      @user = User.find(session[:current_user_id])
+    else
+      @user = User.first
+    end
   end
 
   # GET /Events/1
   # GET /Events/1.json
   def show
+    @guests = Guest.all
   end
 
   # GET /Events/new
@@ -62,7 +68,7 @@ class EventsController < ApplicationController
   end
 
   def assist
-    @guest = Guest.create(:user_id => User.find(session[:current_user_id]), :event_id => Event.find(params[:id]))
+    @guest = Guest.new(event_params)
 
     respond_to do |format|
       if @guest.save
@@ -83,6 +89,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :body)
+      params.permit(:title, :body, :user_id, :event_id)
     end
 end
