@@ -6104,3 +6104,490 @@ Processing by EventsController#show as HTML
 Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 0.4ms | Allocations: 6089)
 
 
+Started GET "/events" for ::1 at 2020-04-30 17:15:53 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 4711)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:16:02 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1710)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 5685)
+
+
+Started GET "/events/2/edit" for ::1 at 2020-04-30 17:16:20 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.7ms | Allocations: 1034)
+  Rendered events/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1407)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5462)
+
+
+Started PATCH "/events/2" for ::1 at 2020-04-30 17:16:51 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"KS18fKQXwMj//GFz5QxLrZLkOMa3DQRvBeIjAPGBMTZJuyXPte4MkxIu9B+JbeO5orki825t0bOD4RyGxWJ40A==", "event"=>{"title"=>"RubyKaigi 2020", "body"=>"RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\n- Through RubyKaigi, you'll get:\r\n\r\n- Huge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\n- The most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\n- The opportunity to understand what Japanese Rubyists are saying in their presentations!\r\n\r\n- There will be JA -> EN interpreters available during RubyKaigi!\r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"}, "commit"=>"Update Event", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mEvent Update (0.2ms)[0m  [1m[33mUPDATE "events" SET "body" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["body", "RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\n- Through RubyKaigi, you'll get:\r\n\r\n- Huge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\n- The most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\n- The opportunity to understand what Japanese Rubyists are saying in their presentations!\r\n\r\n- There will be JA -> EN interpreters available during RubyKaigi!\r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"], ["updated_at", "2020-04-30 22:16:51.096162"], ["id", 2]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 118ms (ActiveRecord: 109.0ms | Allocations: 5346)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:16:51 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1714)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 5711)
+
+
+Started GET "/events/2/edit" for ::1 at 2020-04-30 17:17:01 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.5ms | Allocations: 724)
+  Rendered events/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 835)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 4757)
+
+
+Started PATCH "/events/2" for ::1 at 2020-04-30 17:17:21 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"62xDekIEmnZDHGuG0mXAhkzXCm67rqiJPsdl8p5pFKmL+hrJU/1WLa7O/uq+BGiSfIoQW2LOfVW4xFp0qopdTw==", "event"=>{"title"=>"RubyKaigi 2020", "body"=>"RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\n* Huge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\n* The most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\n* The opportunity to understand what Japanese Rubyists are saying in their presentations!\r\n\r\n* There will be JA -> EN interpreters available during RubyKaigi!\r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"}, "commit"=>"Update Event", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mEvent Update (0.2ms)[0m  [1m[33mUPDATE "events" SET "body" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["body", "RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\n* Huge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\n* The most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\n* The opportunity to understand what Japanese Rubyists are saying in their presentations!\r\n\r\n* There will be JA -> EN interpreters available during RubyKaigi!\r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!"], ["updated_at", "2020-04-30 22:17:21.034813"], ["id", 2]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[35m (109.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 120ms (ActiveRecord: 109.5ms | Allocations: 5348)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:17:21 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1712)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 0.7ms | Allocations: 5700)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:17:38 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 779)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 4708)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:17:42 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1710)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 5699)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:17:49 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 4711)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:17:52 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.4ms | Allocations: 4705)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:17:54 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1711)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.6ms | Allocations: 5712)
+
+
+Started PUT "/assist?event_id=2&user_id=1" for ::1 at 2020-04-30 17:18:03 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"vgKz8xfzi/FFQHglMsNMJtZQXF65EhReBMq2t4G4t01HZ2YkTuTF+ZRQnpkQRRm3YTKzWXhdTceBx8iK+vbgsQ==", "event_id"=>"2", "user_id"=>"1"}
+[31mUnpermitted parameters: :_method, :authenticity_token[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:74:in `block in assist'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `block in assist'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `block in assist'
+  [1m[36mGuest Create (0.3ms)[0m  [1m[32mINSERT INTO "guests" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 2], ["created_at", "2020-04-30 22:18:03.627214"], ["updated_at", "2020-04-30 22:18:03.627214"]]
+  ↳ app/controllers/events_controller.rb:74:in `block in assist'
+  [1m[35m (95.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:74:in `block in assist'
+Redirected to http://localhost:3000/
+Completed 302 Found in 117ms (ActiveRecord: 96.6ms | Allocations: 8617)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:18:03 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 779)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 4731)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:18:07 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.7ms | Allocations: 5697)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:18:29 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 4705)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:18:33 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1724)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 0.9ms | Allocations: 5699)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:19:04 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 4683)
+
+
+Started GET "/events/2" for ::1 at 2020-04-30 17:19:54 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1724)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 5703)
+
+
+Started GET "/events" for ::1 at 2020-04-30 17:26:36 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 798)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 4724)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-04-30 17:26:42 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:18
+  Rendered events/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.4ms | Allocations: 4696)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:26:45 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1737)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 1.1ms | Allocations: 5737)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDateToEvents (20200430223132)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "events" ADD "start_date" date NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDateToEvents (20200430223132)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "events" ADD "start_date" date[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200430223132"]]
+  [1m[35m (70.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:42:28 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 5309)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 12.2ms | ActiveRecord: 0.4ms | Allocations: 17588)
+
+
+Started GET "/events/2/edit" for 127.0.0.1 at 2020-04-30 17:42:30 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 206.0ms | Allocations: 126228)
+  Rendered events/edit.html.erb within layouts/application (Duration: 207.7ms | Allocations: 126549)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 0.2ms | Allocations: 127612)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f9e38c7de80>:0x00007f9e38b4de98>):
+    22:   </div>
+    23: 
+    24:   <div class="field">
+    25:     <%= f.label :start_date %>
+    26:     <%= f.date_field :start_date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+    27:   </div>
+    28:   
+  
+app/views/events/_form.html.erb:25
+app/views/events/_form.html.erb:1
+app/views/events/edit.html.erb:3
+Started GET "/events/2/edit" for 127.0.0.1 at 2020-04-30 17:43:22 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 150.7ms | Allocations: 126263)
+  Rendered events/edit.html.erb within layouts/application (Duration: 151.2ms | Allocations: 126587)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.5ms | Allocations: 134017)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f9e38de07f0>:0x00007f9e38dda7b0>):
+    22:   </div>
+    23: 
+    24:   <div class="field">
+    25:     <%= f.date_field :start_date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+    26:   </div>
+    27: 
+    28:   <div class="actions">
+  
+app/views/events/_form.html.erb:25
+app/views/events/_form.html.erb:1
+app/views/events/edit.html.erb:3
+Started GET "/events/2/edit" for 127.0.0.1 at 2020-04-30 17:43:42 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 169.8ms | Allocations: 126290)
+  Rendered events/edit.html.erb within layouts/application (Duration: 171.6ms | Allocations: 126611)
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 0.2ms | Allocations: 128274)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x000055773b4eb670>:0x000055773b4da528>):
+    23: 
+    24:   <div class="field">
+    25:     <%= form.label :start_date %>
+    26:     <%= form.date_field :start_date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+    27:   </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/events/_form.html.erb:26
+app/views/events/_form.html.erb:1
+app/views/events/edit.html.erb:3
+Started GET "/events/2/edit" for 127.0.0.1 at 2020-04-30 17:44:09 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 19.9ms | Allocations: 3856)
+  Rendered events/edit.html.erb within layouts/application (Duration: 22.0ms | Allocations: 4229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.2ms | Allocations: 8993)
+
+
+Started PATCH "/events/2" for 127.0.0.1 at 2020-04-30 17:44:45 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"DZiJ6dXkZbxuTnnQCgg97343joFzmbA+bNGYmthY+yPlRJ7Z0tAiX3fEgoBnGSzD7metOxDO8z7TLiKw6M6pEg==", "event"=>{"title"=>"RubyKaigi 2020", "body"=>"RubyKaigi is a 3 day, multi-track paid conference for Rubyists, held in Japan, the country Ruby was born in.\r\n\r\nThrough RubyKaigi, you'll get:\r\n\r\n* Huge chance to say hi and thanks to Ruby committers! (RubyKaigi will have the largest number of Ruby committers in conferences all around the world!)\r\n\r\n* The most awesome keynote talks on this planet, including Yukihiro \"matz\" Matsumoto!\r\n\r\n* The opportunity to understand what Japanese Rubyists are saying in their presentations!\r\n\r\n* There will be JA -> EN interpreters available during RubyKaigi!\r\n\r\nWe will provide a great environment for Rubyists from all around the world.\r\n\r\nWe hope you'll join us!", "start_date"=>"2020-09-03"}, "commit"=>"Update Event", "id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[36mEvent Update (0.6ms)[0m  [1m[33mUPDATE "events" SET "start_date" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["start_date", "2020-09-03"], ["updated_at", "2020-04-30 22:44:45.691807"], ["id", 2]]
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+  [1m[35m (93.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:50:in `block in update'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 171ms (ActiveRecord: 95.4ms | Allocations: 11911)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:44:45 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:13
+  Rendered events/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3586)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 1.0ms | Allocations: 8548)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/events/2" for 127.0.0.1 at 2020-04-30 17:46:35 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:87:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "guests" ON "users"."id" = "guests"."user_id" WHERE "guests"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:17
+  Rendered events/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2013)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 19.8ms | ActiveRecord: 0.7ms | Allocations: 6906)
+
+
