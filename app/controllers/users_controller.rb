@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   include UserHelper
 
   def create
-    @user = User.new(user_params)
+    @user = User.new()
+    @user.name = params[:user][:name]
     if @user.save
       session[:current_user_id] = @user.id
       redirect_to root_path

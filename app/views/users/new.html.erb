@@ -9,7 +9,7 @@
   
   </ul>
 
-<%= form_with model: @user do |f| %>
+<%= form_with model: User.new  do |f| %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name, :placeholder => 'Your name' %>
