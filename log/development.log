@@ -531,3 +531,812 @@ FOREIGN KEY ("event_id")
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."user_id" WHERE "attendances"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/ruben/.rbenv/versions/2.6.5/bin/rake:23)
+Started GET "/" for 127.0.0.1 at 2020-04-30 23:02:30 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ruben/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ruben/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.2ms | Allocations: 308)
+Completed 200 OK in 13ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 1720)
+
+
+Started GET "/new" for 127.0.0.1 at 2020-04-30 23:02:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:02:43 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1119)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/ruben/private-events/public/packs
+[Webpacker] Hash: 32e57f147dbdcbbf0c82
+Version: webpack 4.43.0
+Time: 1231ms
+Built at: 04/30/2020 11:02:45 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-bbe9c4a129ab949e0636.js    124 KiB  application  [emitted] [immutable]  application
+js/application-bbe9c4a129ab949e0636.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-bbe9c4a129ab949e0636.js js/application-bbe9c4a129ab949e0636.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 2367ms (Views: 2359.7ms | ActiveRecord: 0.7ms | Allocations: 26214)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:03:12 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 987)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 5352)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:03:18 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 982)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 5337)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:05:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 833)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 0.4ms | Allocations: 8862)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:05:25 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 4213)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:05:42 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 4217)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:05:52 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"APQoWkJih8FsuR16qZJ7JpDlJdF9Kp3YmIo6cg6AwHwuqVBIhJFBF/+u/s5fau6rVRupxUUU3rB6qeXbNHz1ow==", "user"=>{"user"=>{"name"=>"rauls"}}, "commit"=>"save"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 982)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:6:in `create'
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:06:13 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"APQoWkJih8FsuR16qZJ7JpDlJdF9Kp3YmIo6cg6AwHwuqVBIhJFBF/+u/s5fau6rVRupxUUU3rB6qeXbNHz1ow==", "user"=>{"user"=>{"name"=>"rauls"}}, "commit"=>"save"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 667)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:6:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:06:56 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 836)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 8893)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:06:57 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 4216)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:06:57 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 779)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4203)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:06:59 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"ziAvR0TCVifgf7LCAO5PkRmKPJgiyYf5lvJvaC7t8YLgfVdVgjGQ8XNoUXb2Ftoc3HSwjBr3xJF00bDBFBHEXQ==", "user"=>{"user"=>{"name"=>"rauls"}}, "commit"=>"save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:06:59.111508"], ["updated_at", "2020-05-01 04:06:59.111508"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 805)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 11.4ms | ActiveRecord: 2.3ms | Allocations: 7712)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:07:09 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4201)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:07:10 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4218)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:07:10 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4198)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:09:02 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"6benCX9MzuXBHC7NFvT9u6fCXOUoVmPq8H2n6919McfH6t8bub8IM1ILzXngDGg2YjzQ8RBoIIISXnhC54EEGA==", "user"=>{"user"=>{"name"=>"oscar"}}, "commit"=>"save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:09:02.419810"], ["updated_at", "2020-05-01 04:09:02.419810"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 2.3ms | Allocations: 7222)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:10:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 833)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 8900)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:10:17 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"WIZ+tlkkHMlAn2SHWXrSn87I7DD8GWU/CLBHYykL1I922wakn9faH9OIhzOvgkcSCzZgJMQnJlfqk5jKE/fhUA==", "user"=>{"user"=>{"name"=>"oscar"}}, "commit"=>"save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1014)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:6:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:10:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 837)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 8909)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:10:59 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"EUySZwDTK7j1gBSd+u2moeUlZ4i0cKUCPSwLf9met5w/Eep1xiDtbmaX9ykMFTMsINvrnIxO5mrfD9TW42KCQw==", "user"=>{"user"=>{"name"=>"oscar"}}, "commit"=>"save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:10:59.297029"], ["updated_at", "2020-05-01 04:10:59.297029"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 801)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 2.5ms | Allocations: 7411)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:11:00 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"EUySZwDTK7j1gBSd+u2moeUlZ4i0cKUCPSwLf9met5w/Eep1xiDtbmaX9ykMFTMsINvrnIxO5mrfD9TW42KCQw==", "user"=>{"user"=>{"name"=>"oscar"}}, "commit"=>"save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:11:00.581818"], ["updated_at", "2020-05-01 04:11:00.581818"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 2.4ms | Allocations: 7242)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:14:37 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 833)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 8856)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:14:38 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 4202)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:14:38 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4205)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:14:39 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"EVL5q1xkuQZc87j1QGBWpSHO29o0sYf3wAfLLBlTpBI/D4G5mpd/0M/kW0G2mMMo5DBXzgyPxJ8iJBSFI6+RzQ==", "user"=>{"user"=>{"name"=>"oscar"}}, "commit"=>"save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 686)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:21:26 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 836)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 8559)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:21:26 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4206)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:21:26 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 4217)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:21:26 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4205)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:21:31 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"ODH0+cSM51khsTy79YPFVv5Xj6ujlwgJNtSQ7AjBhQcWbIzrAn8hj7Km3w8De1DbO6kDv5upS2HU909FMj2w2A==", "user"=>{"user"=>{"name"=>"ernesto"}}, "commit"=>"save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 688)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:6:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:21:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 875)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 8928)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:21:46 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 4210)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:21:46 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 4202)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:21:50 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"eiBDQ7WV2Ir6NZ8RfLVQZbfYUjdrD7v8lrDNduog0ZlUfTtRc2YeXGkifKWKTcXocibeI1Mx+JR0kxLf0NzkRg==", "user"=>{"user"=>{"name"=>"pedro"}}, "commit"=>"save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 694)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:6:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:22:41 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 836)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 8904)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:22:41 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 4229)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:22:41 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4204)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:22:42 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4210)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:22:46 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"MXqVDsMl/1wy/FDuRbyMC3UkNv8FoimFyqKRArMXJCAfJ+0cBdY5iqHrs1qzRBmGsNq66z2cau0ogU6riesR/w==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "{\"user\"=>{\"name\"=>\"maria\"}}"], ["created_at", "2020-05-01 04:22:46.440958"], ["updated_at", "2020-05-01 04:22:46.440958"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 801)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 2.4ms | Allocations: 7410)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:23:26 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"MXqVDsMl/1wy/FDuRbyMC3UkNv8FoimFyqKRArMXJCAfJ+0cBdY5iqHrs1qzRBmGsNq66z2cau0ogU6riesR/w==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:23:26.834948"], ["updated_at", "2020-05-01 04:23:26.834948"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 856)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 4.8ms | ActiveRecord: 2.7ms | Allocations: 12060)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:23:50 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"MXqVDsMl/1wy/FDuRbyMC3UkNv8FoimFyqKRArMXJCAfJ+0cBdY5iqHrs1qzRBmGsNq66z2cau0ogU6riesR/w==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 5618)
+
+
+  
+NoMethodError (undefined method `name' for #<ActionController::Parameters:0x00007fbb08416e08>):
+  
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:24:09 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"MXqVDsMl/1wy/FDuRbyMC3UkNv8FoimFyqKRArMXJCAfJ+0cBdY5iqHrs1qzRBmGsNq66z2cau0ogU6riesR/w==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:24:09.667628"], ["updated_at", "2020-05-01 04:24:09.667628"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 856)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 4.4ms | ActiveRecord: 2.7ms | Allocations: 12082)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:24:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"MXqVDsMl/1wy/FDuRbyMC3UkNv8FoimFyqKRArMXJCAfJ+0cBdY5iqHrs1qzRBmGsNq66z2cau0ogU6riesR/w==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 5478)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:24:53 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"MXqVDsMl/1wy/FDuRbyMC3UkNv8FoimFyqKRArMXJCAfJ+0cBdY5iqHrs1qzRBmGsNq66z2cau0ogU6riesR/w==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 5630)
+
+
+  
+NoMethodError (undefined method `name' for #<ActionController::Parameters:0x00007fbb087a6438>):
+  
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:25:05 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"MXqVDsMl/1wy/FDuRbyMC3UkNv8FoimFyqKRArMXJCAfJ+0cBdY5iqHrs1qzRBmGsNq66z2cau0ogU6riesR/w==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:25:05.531438"], ["updated_at", "2020-05-01 04:25:05.531438"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 2.8ms | Allocations: 12110)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:34:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 833)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 8520)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:34:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4213)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:34:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4202)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:34:23 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"d869iY9WxUVtfpsuwdsaTHHIfC//fMI0dP5Vw2IuoUtZk8WbSaUDk/5peJo3I4/BtDbwO8dCgVyW3YpqWNKUlA==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"save"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:34:23.398562"], ["updated_at", "2020-05-01 04:34:23.398562"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 801)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 2.7ms | Allocations: 7398)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:36:47 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2149)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 6511)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:36:47 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 899)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4348)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:36:47 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 4321)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:36:48 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 4320)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:36:48 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4324)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:36:49 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4323)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:36:50 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4325)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:36:56 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"OdWLRKZCe4hxpTLmB5Elcs8UYsecu+VpckhJTXvPgNMXiPNWYLG9XuKy0VLxabD/Curu06SFpgGQa5bkQTO1DA==", "user"=>{"user"=>{"name"=>"maria"}}, "commit"=>"Save User[user]"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-05-01 04:36:56.620811"], ["updated_at", "2020-05-01 04:36:56.620811"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 915)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 3.2ms | Allocations: 7514)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:23 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 9003)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:23 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4311)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:24 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 4311)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:24 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4331)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:24 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 4323)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:24 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4327)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 4334)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4328)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4329)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:53 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 591)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5034)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:53 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 382)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3902)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:53 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 376)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3887)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 376)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 376)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 3895)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 376)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:37:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 376)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 3901)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-30 23:37:56 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"CCUimsECzoTGT0Qu+xDZ+mDj2jEWIwwdc6NEaSCN67EmeFqIB/EIUlVYp5oN6Ex3pR1WJS4dT3WRgJvAGnHebg==", "user"=>{"name"=>"maria"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "maria"], ["created_at", "2020-05-01 04:37:56.926440"], ["updated_at", "2020-05-01 04:37:56.926440"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 424)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 3.0ms | Allocations: 7262)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/ruben/.rbenv/versions/2.6.5/bin/rake:23)
+Started GET "/users/new" for 127.0.0.1 at 2020-04-30 23:42:17 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.4ms | Allocations: 9486)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-04-30 23:43:06 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 101)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 4460)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2020-04-30 23:43:12 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 4021)
+
+
