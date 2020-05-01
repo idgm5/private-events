@@ -23,7 +23,7 @@
           |
           <%= link_to 'Assist', assist_path(event_id: event, user_id: session[:current_user_id]), method: :put, data: { confirm: 'Do you want to assist to this event?' } %>
           |
-          <%= link_to 'Delete', event_path(event), data: {confirm: "Really delete the article?"}, method: :delete %>
+          <%= link_to 'Delete', event_path(event), data: {confirm: "Delete event?"}, method: :delete %>
         </td>
       </tr>
       <tr>
@@ -52,7 +52,7 @@
           |
           <%= link_to 'Assist', assist_path(event_id: event, user_id: session[:current_user_id]), method: :put, data: { confirm: 'Do you want to assist to this event?' } %>
           |
-          <%= link_to 'Delete', event_path(event), data: {confirm: "Really delete the article?"}, method: :delete %>
+          <%= link_to 'Delete', event_path(event), data: {confirm: "Delete event?"}, method: :delete %>
         </td>
       </tr>
       <tr>

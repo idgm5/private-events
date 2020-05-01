@@ -12,18 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label "Add a description for the event." %>
+    <br/>
+    <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_field :start_date, as: :date, value: form.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+    <%= form.label "Add a date for the event." %>
+    <br/>
+    <%= form.date_field :event_date, as: :date, value: form.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
   </div>
 
   <div class="actions">

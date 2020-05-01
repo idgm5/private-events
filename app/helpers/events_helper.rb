@@ -7,7 +7,7 @@ module EventsHelper
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:title, :body, :start_date)
+    params.require(:event).permit(:description, :event_date)
   end
 
   def attendace_params

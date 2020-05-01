@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
   include EventsHelper
-  
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def new
-    @event = User.find(session[:current_user_id]).events.build
+    @event = Event.new
   end
 
   def create
-    @event = User.find(session[:current_user_id]).events.build(event_params)
-
+    @event = Event.new(event_params)
+    @event.creator_id = session[:current_user_id]
+    
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -58,7 +59,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def assit
+  def assist
     @guest = Attendance.new(attendace_params)
 
     respond_to do |format|
@@ -72,5 +73,5 @@ class EventsController < ApplicationController
     end
   end
 
-  
+
 end

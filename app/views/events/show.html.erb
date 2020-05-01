@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Host: <%= @event.user.name %></strong>
+  <strong>Host: <%= @event.creator.name %></strong>
 </p>
 
-<%= simple_format(@event.body)  %>
+<%= simple_format(@event.description)  %>
 
 <p>
-  <strong>Date: <%= @event.start_date %></strong>
+  <strong>Date: <%= @event.event_date %></strong>
 </p>
 
 <p>
@@ -16,7 +16,7 @@
   <tbody>
     <% @attendances.each do |guest| %>
       <tr>
-        <% if @event.user.name != guest.name %>
+        <% if @event.creator.name != guest.name %>
         <td><strong><%= guest.name %></strong></td>
         <br/>
         <% end %>

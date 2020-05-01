@@ -1,6 +1,10 @@
 module UsersHelper
-    private 
+    private
     def user_params
-        params.require(:users).permit(:name)
+        params.require(:user).permit(:name)
+    end
+
+    def set_user
+        @user = User.find(params[:id])
     end
 end
