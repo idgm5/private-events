@@ -9,13 +9,11 @@
   
   </ul>
 
-<%= form_with model: User.new  do |f| %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :placeholder => 'Your name' %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+<%= form_with model: @user do |f| %>
+<ul>    
+    <li>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+    </li>    
+</ul>
 <% end %>
