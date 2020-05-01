@@ -44,8 +44,6 @@
           <%= link_to 'Show', event %>
           |
           <%= link_to 'Assist', assist_path(event_id: event, user_id: session[:current_user_id]), method: :put, data: { confirm: 'Do you want to assist to this event?' } %>
-          |
-          <%= link_to 'Delete', event_path(event), data: {confirm: "Really delete the article?"}, method: :delete %>
         </td>
       </tr>
     <% end %>
