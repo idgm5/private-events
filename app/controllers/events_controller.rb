@@ -59,7 +59,7 @@ class EventsController < ApplicationController
   end
 
   def assit
-    @guest = Attendace.new(attendace_params)
+    @guest = Attendance.new(attendace_params)
 
     respond_to do |format|
       if @guest.save
