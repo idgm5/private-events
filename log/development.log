@@ -4983,3 +4983,754 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 2.7ms | Allocations: 5638)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "raul"], ["created_at", "2020-05-01 20:54:27.755440"], ["updated_at", "2020-05-01 20:54:27.755440"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for ::1 at 2020-05-01 15:58:36 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:44:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 18.2ms | ActiveRecord: 1.0ms | Allocations: 21494)
+
+
+Started GET "/users/new" for ::1 at 2020-05-01 15:58:42 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1901)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 6170)
+
+
+Started POST "/users" for ::1 at 2020-05-01 15:58:46 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"suG2hhsnSM1qyX0xYRTna1zZ38PuKVEUZhJnutgOGVI9JT+w0WU6q//BUsnMJzl2D69YOu5EXmSHlWaRr9bvJQ==", "user"=>{"name"=>"raul"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "raul"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/create.html.erb within layouts/application
+  Rendered users/create.html.erb within layouts/application (Duration: 0.2ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 7539)
+
+
+Started POST "/users" for ::1 at 2020-05-01 15:58:48 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"suG2hhsnSM1qyX0xYRTna1zZ38PuKVEUZhJnutgOGVI9JT+w0WU6q//BUsnMJzl2D69YOu5EXmSHlWaRr9bvJQ==", "user"=>{"name"=>"raul"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "raul"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/create.html.erb within layouts/application
+  Rendered users/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 6696)
+
+
+Started POST "/users" for ::1 at 2020-05-01 16:01:48 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"suG2hhsnSM1qyX0xYRTna1zZ38PuKVEUZhJnutgOGVI9JT+w0WU6q//BUsnMJzl2D69YOu5EXmSHlWaRr9bvJQ==", "user"=>{"name"=>"ernesto"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "ernesto"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ernesto"], ["created_at", "2020-05-01 21:01:48.410291"], ["updated_at", "2020-05-01 21:01:48.410291"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 200 OK in 20ms (ActiveRecord: 3.6ms | Allocations: 10054)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:01:48 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1764)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 2.5ms | Allocations: 8150)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:01:55 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 5500)
+
+
+Started GET "/users/16" for ::1 at 2020-05-01 16:01:57 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:8:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."user_id" = ? AND (event_date > '2020-05-01')[0m  [["user_id", 16]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."user_id" = ? AND (event_date < '2020-05-01')[0m  [["user_id", 16]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered users/show.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2204)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 17.2ms | ActiveRecord: 2.1ms | Allocations: 11626)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:01:58 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1279)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.6ms | Allocations: 5502)
+
+
+Started GET "/events/new" for ::1 at 2020-05-01 16:02:00 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 9.3ms | Allocations: 2182)
+  Rendered events/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2529)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 9560)
+
+
+Started POST "/events" for ::1 at 2020-05-01 16:02:13 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"zuqdixcytxQmiI8QCMLFKgw8LPakzuziK/BjjSS3oLcjVacNVOB38ThTzXL4l45wrBjg/B4lqwxShUUDImVpGg==", "event"=>{"description"=>"event x", "event_date"=>"2020-05-22"}, "commit"=>"Create Event"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mEvent Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "events" WHERE "events"."description" = ? LIMIT ?[0m  [["description", "event x"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mEvent Create (1.6ms)[0m  [1m[32mINSERT INTO "events" ("description", "creator_id", "created_at", "updated_at", "event_date") VALUES (?, ?, ?, ?, ?)[0m  [["description", "event x"], ["creator_id", 16], ["created_at", "2020-05-01 21:02:13.899446"], ["updated_at", "2020-05-01 21:02:13.899446"], ["event_date", "2020-05-22"]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 21ms (ActiveRecord: 5.0ms | Allocations: 6814)
+
+
+Started GET "/events/2" for ::1 at 2020-05-01 16:02:13 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/events_helper.rb:5:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:17
+  Rendered events/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2037)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.6ms | Allocations: 6471)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:02:16 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.7ms | Allocations: 6337)
+
+
+Started PUT "/assist?event_id=2&user_id=16" for ::1 at 2020-05-01 16:02:24 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"3rF03hP03prLNyCUZgV5OecQFlagUuqbGBB8DVup8ZCyX/qspT7pCY4q3qOZdsbY3bOSP9IZmI/SPKQCBj9oGQ==", "event_id"=>"2", "user_id"=>"16"}
+[31mUnpermitted parameters: :_method, :authenticity_token[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.1ms | Allocations: 10126)
+
+
+  
+NoMethodError (undefined method `users' for #<Attendance:0x00005579bcb5f438>
+Did you mean?  user
+               user=):
+  
+app/controllers/events_controller.rb:66:in `block in assist'
+app/controllers/events_controller.rb:65:in `assist'
+Started PUT "/assist?event_id=2&user_id=16" for ::1 at 2020-05-01 16:02:53 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"3rF03hP03prLNyCUZgV5OecQFlagUuqbGBB8DVup8ZCyX/qspT7pCY4q3qOZdsbY3bOSP9IZmI/SPKQCBj9oGQ==", "event_id"=>"2", "user_id"=>"16"}
+[31mUnpermitted parameters: :_method, :authenticity_token[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mAttendance Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "attendances" WHERE "attendances"."user_id" = ? AND "attendances"."events" IS NULL LIMIT ?[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 3.7ms | Allocations: 21478)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: attendances.events):
+  
+app/controllers/events_controller.rb:66:in `block in assist'
+app/controllers/events_controller.rb:65:in `assist'
+Started PUT "/assist?event_id=2&user_id=16" for ::1 at 2020-05-01 16:03:03 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"3rF03hP03prLNyCUZgV5OecQFlagUuqbGBB8DVup8ZCyX/qspT7pCY4q3qOZdsbY3bOSP9IZmI/SPKQCBj9oGQ==", "event_id"=>"2", "user_id"=>"16"}
+[31mUnpermitted parameters: :_method, :authenticity_token[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mAttendance Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendances" WHERE "attendances"."user_id" = ? AND "attendances"."event_id" = ? LIMIT ?[0m  [["user_id", 16], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mAttendance Create (0.5ms)[0m  [1m[32mINSERT INTO "attendances" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 16], ["event_id", 2], ["created_at", "2020-05-01 21:03:03.453415"], ["updated_at", "2020-05-01 21:03:03.453415"]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 8.9ms | Allocations: 22344)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:03:03 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 32.0ms | Allocations: 2952)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.7ms | Allocations: 7419)
+
+
+Started PUT "/assist?event_id=2&user_id=16" for ::1 at 2020-05-01 16:03:12 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"pOdM8ik/8mIbj0KlA9S/8haBTSxNIvBA/8FZzKQMNaTICcKAn/XF8V6SvJL8pwATLCLJRT9pglQ17YHD+ZqsLQ==", "event_id"=>"2", "user_id"=>"16"}
+[31mUnpermitted parameters: :_method, :authenticity_token[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mAttendance Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendances" WHERE "attendances"."user_id" = ? AND "attendances"."event_id" = ? LIMIT ?[0m  [["user_id", 16], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms | Allocations: 5665)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:03:12 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2117)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.6ms | Allocations: 6347)
+
+
+Started GET "/events/2" for ::1 at 2020-05-01 16:03:17 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/events_helper.rb:5:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:19
+  Rendered events/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 0.6ms | Allocations: 6976)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:03:19 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.6ms | Allocations: 6313)
+
+
+Started GET "/users/16" for ::1 at 2020-05-01 16:03:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:8:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."user_id" = ? AND (event_date > '2020-05-01')[0m  [["user_id", 16]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."user_id" = ? AND (event_date < '2020-05-01')[0m  [["user_id", 16]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered users/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1452)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.8ms | Allocations: 6874)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:03:30 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.7ms | Allocations: 6309)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:03:38 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:44:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2158)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.7ms | Allocations: 6412)
+
+
+Started GET "/users/new" for ::1 at 2020-05-01 16:03:44 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 3947)
+
+
+Started POST "/users" for ::1 at 2020-05-01 16:03:49 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"HIHjkwm/JxX+UBLszZwJuGmqZc4Hd/E1kue7RSnjzXOGYRM9Toi1xza387oZr8hG+J/ziHI/UMqo8Fsk3yOwBA==", "user"=>{"name"=>"pablo"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "pablo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "pablo"], ["created_at", "2020-05-01 21:03:49.358848"], ["updated_at", "2020-05-01 21:03:49.358848"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 200 OK in 12ms (ActiveRecord: 2.8ms | Allocations: 4769)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:03:49 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2175)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 6339)
+
+
+Started PUT "/assist?event_id=2&user_id=17" for ::1 at 2020-05-01 16:04:00 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"ecTk/wqm6ik7zFXSXmQCtirxFwmJnHT/1Npq2b6YiFwUBxU8IFzvLgFL80qnxwH2NOqz2l2N8W+YTBDklcaF5A==", "event_id"=>"2", "user_id"=>"17"}
+[31mUnpermitted parameters: :_method, :authenticity_token[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mAttendance Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendances" WHERE "attendances"."user_id" = ? AND "attendances"."event_id" = ? LIMIT ?[0m  [["user_id", 17], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 17], ["event_id", 2], ["created_at", "2020-05-01 21:04:00.587176"], ["updated_at", "2020-05-01 21:04:00.587176"]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 4.0ms | Allocations: 6522)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:04:00 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2177)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 1.5ms | Allocations: 6356)
+
+
+Started PUT "/assist?event_id=2&user_id=17" for ::1 at 2020-05-01 16:04:13 -0500
+Processing by EventsController#assist as HTML
+  Parameters: {"authenticity_token"=>"tbrDi9qjMgZyXXvsHk+wsZhcgEGxSaIXjDYmbKoyaLjYeTJI8Fk3AUja3XTn7LPxhkckkmVYJ4fAoFxRgWxlAA==", "event_id"=>"2", "user_id"=>"17"}
+[31mUnpermitted parameters: :_method, :authenticity_token[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[36mAttendance Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendances" WHERE "attendances"."user_id" = ? AND "attendances"."event_id" = ? LIMIT ?[0m  [["user_id", 17], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:66:in `block in assist'
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.9ms | Allocations: 5521)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:04:13 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2176)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 1.3ms | Allocations: 6365)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-05-01 16:06:00 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2175)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.1ms | ActiveRecord: 1.1ms | Allocations: 6331)
+
+
+Started GET "/" for ::1 at 2020-05-01 16:06:01 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2175)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.4ms | Allocations: 6337)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-01 16:06:09 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:44:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2156)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 13.7ms | ActiveRecord: 1.0ms | Allocations: 6468)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:06:46 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.9ms | Allocations: 6321)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:06:46 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.7ms | Allocations: 6331)
+
+
+Started GET "/events/2" for ::1 at 2020-05-01 16:06:48 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/events_helper.rb:5:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:19
+  Rendered events/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2908)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.6ms | Allocations: 7054)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:06:49 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  Rendered events/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 6313)
+
+
+Started GET "/events/new" for ::1 at 2020-05-01 16:06:52 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.4ms | Allocations: 845)
+  Rendered events/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 937)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4555)
+
+
+Started POST "/events" for ::1 at 2020-05-01 16:07:03 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"yd7pttCSAVdX0yu350trbdNXOi0fA5W3CJgcxpq62BEkYdMwk0DBskkIadUXHiA3c3P2J6Xo0llx7TpInGgRvA==", "event"=>{"description"=>"hola nuevo", "event_date"=>"2020-04-01"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mEvent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "events" WHERE "events"."description" = ? LIMIT ?[0m  [["description", "hola nuevo"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("description", "creator_id", "created_at", "updated_at", "event_date") VALUES (?, ?, ?, ?, ?)[0m  [["description", "hola nuevo"], ["creator_id", 16], ["created_at", "2020-05-01 21:07:03.710695"], ["updated_at", "2020-05-01 21:07:03.710695"], ["event_date", "2020-04-01"]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 13ms (ActiveRecord: 3.2ms | Allocations: 5229)
+
+
+Started GET "/events/3" for ::1 at 2020-05-01 16:07:03 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/events_helper.rb:5:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = ?[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:17
+  Rendered events/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1553)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 5708)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:07:07 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:60
+  Rendered events/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 2963)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.5ms | Allocations: 7157)
+
+
+Started GET "/events/new" for ::1 at 2020-05-01 16:07:14 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.8ms | Allocations: 809)
+  Rendered events/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 901)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4521)
+
+
+Started POST "/events" for ::1 at 2020-05-01 16:07:23 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"w4FRrnIXKPuJQ/CsKgrb/O+oyCmvlfJ7iAxOY5Q4DI4uPmsoMcXoHpeYss7aX5CmT4wEIxV+tZXxeWjtkurFIw==", "event"=>{"description"=>"test event", "event_date"=>"2020-06-30"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mEvent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "events" WHERE "events"."description" = ? LIMIT ?[0m  [["description", "test event"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("description", "creator_id", "created_at", "updated_at", "event_date") VALUES (?, ?, ?, ?, ?)[0m  [["description", "test event"], ["creator_id", 16], ["created_at", "2020-05-01 21:07:23.933232"], ["updated_at", "2020-05-01 21:07:23.933232"], ["event_date", "2020-06-30"]]
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:14:in `block in create'
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 15ms (ActiveRecord: 3.7ms | Allocations: 5620)
+
+
+Started GET "/events/4" for ::1 at 2020-05-01 16:07:23 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/events_helper.rb:5:in `set_event'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:4
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/views/events/show.html.erb:17
+  Rendered events/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 5720)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:07:25 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:60
+  Rendered events/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3806)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.8ms | Allocations: 8001)
+
+
+Started GET "/events" for ::1 at 2020-05-01 16:07:37 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:42:in `index'
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date > '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_date < '2020-05-01')[0m
+  ↳ app/views/events/index.html.erb:46
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:60
+  Rendered events/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3806)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.9ms | Allocations: 7997)
+
+
