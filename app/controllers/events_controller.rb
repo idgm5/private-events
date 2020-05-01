@@ -7,8 +7,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.creator_id = session[:current_user_id]
+    
+    current_user = User.find(session[:current_user_id])    
+    @event= current_user.events_as_creator.build(event_params)    
     
     respond_to do |format|
       if @event.save
