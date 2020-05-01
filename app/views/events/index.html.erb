@@ -3,6 +3,7 @@
 <h1>Events</h1>
 <% if session[:current_user_id].is_a? Integer %>
   <h3>Current Profile: <%= link_to "#{@user.name}", @user %> </h3>
+  <h3><%= link_to 'Send invitations', new_attendance_path %></h3>
 <% else %>
   <%= link_to 'Create a new user', new_user_path %>
 <% end %>

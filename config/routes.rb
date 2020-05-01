@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :events
   resources :users
-
+  resources :attendances
+  
   root 'events#index'
 
 end
