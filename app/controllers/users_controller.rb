@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
   include UsersHelper
   def new
     @user = User.new
+  end
+
+  def show
+    @upcoming_events = @user.assisted_events.where('start_date > ?', Date.today).all
+    @prev_events = @user.assisted_events.where('start_date < ?', Date.today).all
   end
 
   def create
@@ -19,5 +25,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+  end
+
+  private
+
+  def set_user
+      @user = User.find(params[:id])
   end
 end

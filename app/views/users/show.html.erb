@@ -1,11 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
-<% if session[:current_user_id].is_a? Integer %>
-  <h3>Current Profile: <%= link_to "#{@user.name}", @user %> </h3>
-<% else %>
-  <%= link_to 'Create a new user', new_user_path %>
-<% end %>
+<p>
+  <strong>Profile: <%= @user.name %></strong>
+</p>
+
 <table>
   <thead>
     <tr>
@@ -13,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <h3>Upcomming Events:</h3>
+    <h3>Assisting this events:</h3>
     <% @upcoming_events.each do |event| %>
       <tr>
         <td>
@@ -26,15 +24,12 @@
           <%= link_to 'Delete', event_path(event), data: {confirm: "Really delete the article?"}, method: :delete %>
         </td>
       </tr>
-      <tr>
-        <td>
-          <p>Hosted by: <%= link_to "#{event.user.name}", event.user %></p>
-        </td>
-      </tr>
     <% end %>
   </tbody>
 </table>
+
 <br/>
+
 <table>
   <thead>
     <tr>
@@ -42,7 +37,7 @@
     </tr>
   </thead>
   <tbody>
-    <h3>Previous Events:</h3>
+    <h3>Assisted this events:</h3>
     <% @prev_events.each do |event| %>
       <tr>
         <td>
@@ -55,14 +50,8 @@
           <%= link_to 'Delete', event_path(event), data: {confirm: "Really delete the article?"}, method: :delete %>
         </td>
       </tr>
-      <tr>
-        <td>
-          <p>Hosted by: <%= link_to "#{event.user.name}", event.user %></p>
-        </td>
-      </tr>
     <% end %>
   </tbody>
 </table>
-<br>
 
-<%= link_to 'New event', new_event_path %>
+<%= link_to 'Return to Events', events_path %>
