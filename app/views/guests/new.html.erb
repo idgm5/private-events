@@ -1,16 +1,19 @@
+<h1> Send an invitation </h1>
 <%= form_with(model: @guest, local: true) do |form| %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label 'Select the person to invite' %>
     <%= form.collection_select(:user_id, @users, :id, :name, :prompt => true) %>
   </div>
 
   <div class="field">
-    <%= form.label :event_id %>
+    <%= form.label 'Select one of your hosted events' %>
     <%= form.collection_select(:event_id, @user.events.all, :id, :title, :prompt => true) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Send Invitation' %>
   </div>
 <% end %>
+
+<%= link_to '<< Back', events_path %>
