@@ -28,7 +28,7 @@
       </tr>
       <tr>
         <td>
-          <p>Hosted by: <%= link_to "#{event.user.name}", event.user %></p>
+          <p>Hosted by: <%= link_to "#{event.creator.name}", event.creator %></p>
         </td>
       </tr>
     <% end %>
@@ -46,7 +46,7 @@
     <% @prev_events.each do |event| %>
       <tr>
         <td>
-          <%= event.title %>
+          <%= event.description %>
           |
           <%= link_to 'Show', event %>
           |
@@ -57,7 +57,7 @@
       </tr>
       <tr>
         <td>
-          <p>Hosted by: <%= link_to "#{event.user.name}", event.user %></p>
+          <p>Hosted by: <%= link_to "#{event.creator.name}", event.creator %></p>
         </td>
       </tr>
     <% end %>

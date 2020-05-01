@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+
     if @user.save
       session[:current_user_id] = @user.id
       redirect_to root_path
@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @upcoming_events = @user.events_as_guest.where('event_date > ?', Date.today).all
+    @prev_events = @user.events_as_guest.where('event_date < ?', Date.today).all
   end
 
   def edit

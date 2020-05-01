@@ -16,8 +16,8 @@
   <tbody>
     <% @attendances.each do |guest| %>
       <tr>
-        <% if @event.creator.name != guest.name %>
-        <td><strong><%= guest.name %></strong></td>
+        <% if @event.creator.name != guest.user.name %>
+        <td><strong><%= guest.user.name %></strong></td>
         <br/>
         <% end %>
       </tr>
