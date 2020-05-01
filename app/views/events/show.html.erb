@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Host: <%= @event.user.name %></strong>
+</p>
+
+<%= simple_format(@event.body)  %>
+
+<p>
+  <strong>Date: <%= @event.start_date %></strong>
+</p>
+
+<p>
+  <strong>List of attendees:</strong>
+  <br/>
+  <tbody>
+    <% @guests.each do |guest| %>
+      <tr>
+        <% if @event.user.name != guest.name %>
+        <td><strong><%= guest.name %></strong></td>
+        <br/>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</p>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
