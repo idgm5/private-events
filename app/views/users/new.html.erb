@@ -1,12 +1,21 @@
-<h1>Create a new user</h1>
+<h1>Sign Up</h1>
+  <ul>
+
+  <% unless @user.nil? %>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  <% end %>
+  
+  </ul>
 
 <%= form_with model: @user do |f| %>
-<ul>    
-    <li>
-        <%= f.text_field :name %>
-        <%= f.submit %>
-    </li>    
-</ul>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :placeholder => 'Your name' %>
+  </p>
 
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
-
