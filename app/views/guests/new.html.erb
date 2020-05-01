@@ -1,0 +1,16 @@
+<%= form_with(model: @guest, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select(:user_id, @users, :id, :name, :prompt => true) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.collection_select(:event_id, @user.events.all, :id, :title, :prompt => true) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
