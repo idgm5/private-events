@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include UsersHelper
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: %i[show edit update]
 
   def create
     @user = User.new(user_params)
@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     if @user.save
       session[:current_user_id] = @user.id
       redirect_to root_path
+    else
+      render :new
     end
   end
 
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def new
-     @user = User.new
+    @user = User.new
   end
 
   def update

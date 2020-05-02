@@ -1,16 +1,15 @@
 class EventsController < ApplicationController
   include EventsHelper
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: %i[show edit update destroy]
 
   def new
     @event = Event.new
   end
 
   def create
-    
-    current_user = User.find(session[:current_user_id])    
-    @event= current_user.events_as_creator.build(event_params)    
-    
+    current_user = User.find(session[:current_user_id])
+    @event = current_user.events_as_creator.build(event_params)
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -22,8 +21,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
@@ -39,11 +37,11 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    if session[:current_user_id].is_a? Integer
-      @user = User.find(session[:current_user_id])
-    else
-      @user = User.first
-    end
+    @user = if session[:current_user_id].is_a? Integer
+              User.find(session[:current_user_id])
+            else
+              User.first
+            end
     @upcoming_events = @events.where('event_date > ?', Date.today).all
     @prev_events = @events.where('event_date < ?', Date.today).all
   end
@@ -66,13 +64,11 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @guest.save
         format.html { redirect_to root_path, notice: 'You are now assiting this event!' }
-        format.json { head :no_content}
+        format.json { head :no_content }
       else
         format.html { redirect_to root_path, notice: "An error happened you can't assist this event" }
         format.json { render json: @guest.errors, status: :unprocessable_entity }
       end
     end
   end
-
-
 end

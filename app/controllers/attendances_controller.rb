@@ -12,7 +12,7 @@ class AttendancesController < ApplicationController
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to root_path, notice: 'You send the invitation!' }
-        format.json { head :no_content}
+        format.json { head :no_content }
       else
         format.html { redirect_to root_path, notice: "An error happened you can't send the invitation." }
         format.json { render json: @attendance.errors, status: :unprocessable_entity }
