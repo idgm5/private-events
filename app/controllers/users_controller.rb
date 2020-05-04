@@ -8,8 +8,10 @@ class UsersController < ApplicationController
     if @user.save
       session[:current_user_id] = @user.id
       redirect_to root_path
-    else
-      render :new
+    else      
+      format.html { redirect_to new_user_path, notice: 'error.' }
+      format.json { render :new, status: :ok, location: @user }
+      #render :new
     end
   end
 
