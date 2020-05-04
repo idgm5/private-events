@@ -24,8 +24,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:current_user_id)
-    #cookies.delete(:remember_token)
+    cookies.delete(:current_user_id)    
     session.delete(:current_user_id)    
     redirect_to sign_in_path
   end

@@ -1,13 +1,6 @@
 <h1>Sign Up</h1>
-  <ul>
-
-  <% unless @user.nil? %>
-    <% @user.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  <% end %>
   
-  </ul>
+<%= render "layouts/errors" %>
 
 <%= form_with model: @user do |f| %>
 

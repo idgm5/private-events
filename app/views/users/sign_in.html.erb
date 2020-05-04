@@ -1,13 +1,4 @@
 <h1>Sign In</h1>
-  <ul>
-
-  <% unless @user.nil? %>
-    <% @user.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  <% end %>
-  
-  </ul>
 
 <%= form_with url: login_path  do |f| %>
 
