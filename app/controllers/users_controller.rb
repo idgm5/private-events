@@ -57,4 +57,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
   end
+
+  def testing 
+  end
 end

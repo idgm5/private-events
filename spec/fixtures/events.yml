@@ -1,0 +1,9 @@
+one:  
+  description: The first event.
+  event_date: <%= Time.zone.now %>
+  creator_id: 1001
+
+two:  
+  description: The second event.
+  event_date: <%= Time.zone.now %>
+  creator_id: 1002
