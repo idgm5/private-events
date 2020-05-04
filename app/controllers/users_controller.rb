@@ -4,13 +4,30 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    
     if @user.save
       session[:current_user_id] = @user.id
       redirect_to root_path
     else
       render :new
     end
+  end
+
+  def sign_in
+    @user = User.new
+  end
+
+  def login 
+    @user = User.find_by(name: params[:name])
+    session[:current_user_id] = @user.id
+    redirect_to root_path
+  end
+
+  def destroy
+    cookies.delete(:current_user_id)
+    #cookies.delete(:remember_token)
+    session.delete(:current_user_id)    
+    redirect_to sign_in_path
   end
 
   def show

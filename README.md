@@ -17,19 +17,12 @@ Tools used on this project
 - Rspec
 - Simple forms
 
-## Install instructions
-
-For running the project please run the next command on your console
-
-```
-bundle install
-```
 
 ## Instructions to run the project
 
 + Open terminal on your workspace with
 ```
-cd /home/project/..
+cd /home/projects_workspace/..
 ```
 + Cloning the project input the next code:
 ```
@@ -42,6 +35,10 @@ cd /private-events/
 Migrate the database
 ```
 rails db:migrate
+```
+Populating with data
+```
+rake db:setup
 ```
 Run the server
 ```
