@@ -2,7 +2,7 @@
 <h1>Events</h1>
 
 <% if session[:current_user_id].is_a? Integer %>
-  <h3>Current Profile: <%= link_to "#{@user.name}", @user %> | <%= link_to 'Send invitations', new_attendance_path %> | <%= link_to 'New event', new_event_path %>  |  <%= link_to 'Log out', log_out_path, method: :delete %></h3>  
+  <h3>Current Profile: <%= link_to "#{current_user.name}", @user %> | <%= link_to 'Send invitations', new_attendance_path %> | <%= link_to 'New event', new_event_path %>  |  <%= link_to 'Log out', log_out_path, method: :delete %></h3>  
 <% else %>
   <%= link_to 'Sign up', new_user_path %> |  <%= link_to 'Sign in', sign_in_path %>
 <% end %>
