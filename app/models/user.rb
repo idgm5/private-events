@@ -3,5 +3,7 @@ class User < ApplicationRecord
   has_many :attendances
   has_many :events_as_guest, through: :attendances, source: :event
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: { message: "field name already exists" }
+  validates :name, uniqueness:  { message: "field name must be unique" }
+  validates :name, uniqueness:  { message: "field name must be unique" }
 end

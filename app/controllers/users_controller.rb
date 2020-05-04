@@ -3,15 +3,18 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
 
   def create
-    @user = User.new(user_params)
-    
+    @user = User.new(user_params)    
+
     if @user.save
       session[:current_user_id] = @user.id
-      redirect_to root_path
-    else      
-      format.html { redirect_to new_user_path, notice: 'error.' }
-      format.json { render :new, status: :ok, location: @user }
-      #render :new
+      flash[:notice] = "User was successfully created!"
+      redirect_to root_path    
+    elsif @user.name ==nil || @user.name =="" || @user.name.blank?
+      flash[:notice] = "User name can't be nil"
+      redirect_to new_user_path
+    else            
+      flash[:notice] = @user.errors.full_messages      
+      redirect_to new_user_path
     end
   end
 
@@ -20,9 +23,15 @@ class UsersController < ApplicationController
   end
 
   def login 
-    @user = User.find_by(name: params[:name])
-    session[:current_user_id] = @user.id
-    redirect_to root_path
+    if User.find_by(name: params[:name])
+      @user = User.find_by(name: params[:name])
+      session[:current_user_id] = @user.id
+      flash[:notice] = "Login successful!"
+      redirect_to root_path    
+    else 
+      flash[:notice] = "User does not exists!"
+      redirect_to sign_in_path
+    end    
   end
 
   def destroy
