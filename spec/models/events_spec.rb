@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  context 'validation tests' do    
+  context 'validation tests' do
     fixtures :events, :users
     before :each do
       @user = users(:first)
-      @event = @user.events_as_creator.build( description: 'The first event', event_date: Time.now)      
+      @event = @user.events_as_creator.build(description: 'The first event', event_date: Time.now)
     end
 
     it 'should not be valid if event creator is not present' do

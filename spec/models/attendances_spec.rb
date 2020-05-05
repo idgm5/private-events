@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Attendance, type: :model do
   context 'validation tests' do
-    fixtures :users, :events,  :attendances
+    fixtures :users, :events, :attendances
 
     before :each do
       @user = users(:first)

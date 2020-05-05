@@ -18,7 +18,7 @@ RSpec.describe 'Events Management' do
       expect(current_path).to have_content('/events/new')
 
       fill_in('event[description]', with: 'E3 Conference')
-      fill_in('event[event_date]', with: Time.zone.now )
+      fill_in('event[event_date]', with: Time.zone.now)
       click_button('Create Event')
 
       expect(page).to have_content('E3 Conference')
@@ -42,14 +42,14 @@ RSpec.describe 'Events Management' do
       expect(current_path).to have_content('/events/new')
 
       fill_in('event[description]', with: 'E3 Conference')
-      fill_in('event[event_date]', with: Time.zone.now )
+      fill_in('event[event_date]', with: Time.zone.now)
       click_button('Create Event')
 
       expect(page).to have_content('E3 Conference')
       click_link('Edit')
 
       fill_in('event[description]', with: 'Rubykaigi 2020')
-      fill_in('event[event_date]', with: Time.zone.now )
+      fill_in('event[event_date]', with: Time.zone.now)
       click_button('Update Event')
 
       expect(page).to have_content('Rubykaigi 2020')
