@@ -46,7 +46,7 @@ rails server
 
 ## Live preview 
 
-[Click here to see the live preoview ](https://priv-events.herokuapp.com/)
+[Click here to see the live preview ](https://priv-events.herokuapp.com/)
 
 ## Screenshot
 
