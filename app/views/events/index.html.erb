@@ -11,7 +11,7 @@
     <% @upcoming_events.each do |event| %>
       <tr>
         <td>
-          <%= event.description %>
+          <%= event.description %>, <%= event.location %>
           |
           <%= link_to 'Show', event %>
           <% if session[:current_user_id].is_a? Integer %>

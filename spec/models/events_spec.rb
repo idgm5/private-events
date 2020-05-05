@@ -17,6 +17,11 @@ RSpec.describe Event, type: :model do
       expect(@event).to_not be_valid
     end
 
+    it 'location should be present' do
+      @event.location = '   '
+      expect(@event).to_not be_valid
+    end
+
     it 'event_date should be present' do
       @event.event_date = nil
       expect(@event).to_not be_valid

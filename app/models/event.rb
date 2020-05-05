@@ -4,4 +4,5 @@ class Event < ApplicationRecord
   has_many :guests, through: :attendances, source: :user
 
   validates :description, presence: true, uniqueness: true
+  validates :location, presence: true
 end

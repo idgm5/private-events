@@ -1,9 +1,11 @@
-one:    
+one:
   description: The first event
   event_date: <%= Time.zone.now %>
+  location: House
   creator: first
 
-two:    
+two:
   description: The second event
   event_date: <%= Time.zone.now %>
+  location: House
   creator: first

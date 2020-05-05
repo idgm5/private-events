@@ -18,6 +18,12 @@
   </div>
 
   <div class="field">
+    <%= form.label "Add a location for the event." %>
+    <br/>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
     <%= form.label "Add a date for the event." %>
     <br/>
     <%= form.date_field :event_date, as: :date, value: form.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
