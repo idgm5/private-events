@@ -44,6 +44,10 @@ Run the server
 rails server
 ```
 
+## Live preview 
+
+[Click here to see the live preoview ](https://priv-events.herokuapp.com/)
+
 ## Screenshot
 
 ![image](./preview.png)
