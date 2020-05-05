@@ -24,5 +24,10 @@
     <% end %>
   </tbody>
 </p>
+
+<%  if @event.creator.id == session[:current_user_id] %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Delete', event_path(@event), data: {confirm: "Delete event?"}, method: :delete %>
+<% end %>
+
 <%= link_to 'Back', events_path %>

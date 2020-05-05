@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Testing sign-up form' do
+RSpec.describe 'Testing Authentication' do
   describe 'adding a new user' do
     it 'creates a new user' do
       visit('/')
