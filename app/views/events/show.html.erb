@@ -1,0 +1,35 @@
+<p>
+  <strong>Host: <%= @event.creator.name %></strong>
+</p>
+
+<%= simple_format(@event.description)  %>
+
+<p>
+  <strong>Location: <%= @event.location %></strong>
+</p>
+
+<p>
+  <strong>Date: <%= @event.event_date %></strong>
+</p>
+
+<p>
+  <strong>List of attendees:</strong>
+  <br/>
+  <tbody>
+    <% @attendances.each do |guest| %>
+      <tr>
+        <% if @event.creator.name != guest.user.name %>
+        <td><strong><%= guest.user.name %></strong></td>
+        <br/>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</p>
+
+<%  if @event.creator.id == session[:current_user_id] %>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Delete', event_path(@event), data: {confirm: "Delete event?"}, method: :delete %>
+<% end %>
+
+<%= link_to 'Back', events_path %>
